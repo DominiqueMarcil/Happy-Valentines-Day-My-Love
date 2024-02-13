@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Day Card</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: Solitreo;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #690b22;
+    font-family: "Pangolin", cursive;
+    font-size: 1vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+body {
+    position: relative !important;
+    height: 100vh;
+    }
+    
+    body:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-image: url(https://divi.space/wp-content/uploads/2019/02/hearts.png);
+    animation: falling-hearts 100s linear infinite;
+    }
+    @keyframes falling-hearts {
+    0% {background-position: 0% 30%;}
+    }
+    
+    @-moz-keyframes falling-hearts {
+    0% {background-position: 0% 30%;}
+    }
+    
+    @-webkit-keyframes falling-hearts {
+    0% {background-position: 0% 30%;}
+    }
+
+.container {
+    position: relative;
+    top: 0vmin;
+    z-index: 3;
+}
+
+.envelope {
+    position: relative;
+    background: #bd5a74;
+    height: 30vmin;
+    width: 47.9vmin;
+}
+
+.card {
+    position: absolute;
+    background: rgb(240, 240, 238);
+    height: 25vmin;
+    width: 43vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 2.5vmin;
+    top: 0vmin;
+    animation: slide-rev 0.2s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.message {
+    position: absolute;
+    top: 5vmin;
+}
+
+.cover {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 15vmin solid #d15777;
+    border-left: 24vmin solid transparent;
+    border-right: 24vmin solid transparent;
+    top: 15vmin;
+    z-index: 3;
+}
+
+.cover::after {
+    /*left triangle*/
+    position: absolute;
+    content: "";
+    border-left: 24.5vmin solid #fcbbcc;
+    border-bottom: 15vmin solid transparent;
+    border-top: 15vmin solid transparent;
+    top: -15vmin;
+    left: -24vmin;
+}
+
+.cover::before {
+    position: absolute;
+    content: "";
+    border-right: 24.5vmin solid #fcbbcc;
+    border-bottom: 15vmin solid transparent;
+    border-top: 15vmin solid transparent;
+    top: -15vmin;
+    left: -0.5vmin;
+}
+
+.lid {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 15vmin solid #d15777;
+    border-left: 24vmin solid transparent;
+    border-right: 24vmin solid transparent;
+    top: 0;
+    transform-origin: top;
+    animation: none;
+}
+
+.container:hover .lid {
+    animation: open 5s;
+    animation-fill-mode: forwards;
+}
+
+.container:hover .card {
+    animation: slide 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.shadow {
+    position: relative;
+    top: 3vmin;
+    border-radius: 50%;
+    opacity: 0.7;
+    height: 2vmin;
+    width: 48vmin;
+    background: #3d0316;
+}
+
+/* Heart Animation */
+.heart {
+    position: fixed; 
+    z-index: -1;
+    width: 10px;
+    height: 10px;
+    background-color: pink;
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-100px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+}
+
+/* Custom Lid Animation */
+@keyframes open {
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+/* Custom Card Animation */
+@keyframes slide {
+    100% {
+        transform: translateY(-15vmin);
+        z-index: 2;
+    }
+}
+
+/* Reverse Lid Animation */
+@keyframes open-rev {
+    from {
+        transform: rotateX(-180deg);
+    }
+}
+
+/* Reverse Card Animation */
+@keyframes slide-rev {
+    from {
+        transform: translateY(-15vmin);
+    }
+}
+
+.fade-in {
+            animation: fadeInAnimation 4s ease-in-out;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                visibility: hidden;
+            }
+            100% {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        </style>
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Solitreo' rel='stylesheet'>
+  <div class="container fade-in">
+    <div class="envelope fade-in"></div>
+    <div class="card">
+      <h1 class="message">I love You!<br> And the kindness that you carry in your smile!<br> Thank you for being a part of my life! <br> Happy Valentines Day my Love! &#9829; </h1>
+      <div class="heart"></div>
+    </div>
+    <div class="cover"></div>
+    <div class="lid"></div>
+    <div class="shadow"></div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

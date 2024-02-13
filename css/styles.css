@@ -1,0 +1,139 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #f3c5d1;
+}
+
+
+
+
+/* styles.css */
+
+/* Apply styles to the h1 element */
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #c10a43;
+    margin-top: 50%;
+}
+
+/* Apply styles to the cat-container div */
+.cat-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Apply styles to the cat-svg svg */
+#cat-svg {
+    width: 500px;
+    height: auto;
+}
+
+/* Apply styles to specific SVG paths */
+.cls-1 {
+    fill: #ed9abc; /* Pink fill */
+}
+
+.cls-6 {
+    fill: #c10a43; /* Red fill */
+}
+
+/* Apply styles to SVG strokes */
+.cls-2, .cls-3, .cls-4 {
+    stroke: #000; /* Black stroke */
+}
+
+.cls-2 {
+    stroke-width: 2px;
+}
+
+.cls-3 {
+    stroke-width: 1px;
+}
+
+#Layer_4 {
+    transition: all 0.5s; /* Transition for the cat's tail */
+}
+
+/* styles.css */
+
+
+/* Apply animation to Layer_4 (cat tail) */
+#Layer_4 {
+    animation: tailAnimation 1s infinite; /* Tail animation */
+}
+
+/* Apply animation to Layer_5, Layer_6, and Layer_7 (hearts) */
+#Layer_5, #Layer_6, #Layer_7 {
+    fill: red; /* Change fill color to red */
+    animation: moveHearts 3s ease-in-out infinite; /* Heart movement animation */
+}
+
+/* Keyframes for heart movement */
+@keyframes moveHearts {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+
+/* Define keyframe animation for catFrameAnimation */
+@keyframes catFrameAnimation {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply animation to Layer_8 (cat frame) */
+#Layer_8 {
+    animation: catFrameAnimation 2s steps(1) infinite; /* Cat frame animation */
+}
+
+/* Apply animation to Layer_4 (heart) */
+#Layer_4 {
+    fill: red; /* Change fill color to red */
+    animation: heartAnimation 2s steps(2) infinite; /* Heart animation */
+}
+
+/* Define keyframe animation for heartAnimation */
+@keyframes heartAnimation {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* Apply styles to the buttons */
+#moveButton, #sizeButton {
+    padding: 10px 20px;
+    background-color: #d5004a;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* Apply styles to the buttons container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.filler {
+    padding: 20px;
+}
